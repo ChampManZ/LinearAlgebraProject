@@ -4,10 +4,5 @@
 % L comes from its inverse
 
 function x = lufactorization(A, b)
-    disp('Original matrix A: ');
-    disp(A);
-    [m, n] = size(A);
-    L = eye(n);  % Lower
-    P = L;  % Permutation
-    U = A;  % Upper
+    [U, E] = elementary_calculate(A, b);
 end

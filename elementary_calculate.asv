@@ -1,0 +1,33 @@
+%% Elementary Matrix Calculation | 63011342 Thanapat Eurboonyanun
+
+% Function Note: This use in LU Factorization to factor finding the
+% upper matrix
+
+function elementary_calculate(A, b)
+    disp('Original coefficient matrix A: ');
+    disp(A);
+    disp('Original Column matrix b: ');
+    disp(b);
+    [m, n] = size(A);
+    fprintf('A has a size of %ix%i matrix\n', m, n);
+    counter = 1;
+    for i=1:1:n-1
+        for j=i+1:1:m
+            e(:,:,counter) = eye(n);
+            e(j,i,counter) = -A(j,i) / A(i,i);
+            A = e(:,:,counter) * A;
+            b = e(:,:,counter) * b;
+            counter = counter + 1;
+            disp(A);
+            disp(b);
+        end
+    end
+    for j = 1:1:n-1,
+        for i = j+1:1:m,
+            E(:,:,x) = eye(n);
+            E(i,j,x) = -A(i,j) / A(j,j);
+            A = E(:,:,x) * A;
+            x = x + 1;
+        end
+    end
+end
