@@ -15,7 +15,7 @@ for i = 1:size
         tempArr(i,:) = [];
         tempArr(:,l,:) = [];
         
-        cofector(i,l)=det_self(tempArr);
+        cofector(i,l)=det_self2(tempArr);
     end
 end
 
