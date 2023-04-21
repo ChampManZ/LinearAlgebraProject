@@ -10,6 +10,14 @@ for j=1:size-1
         %disp(inputArr(i,j)/inputArr(j,j))
     end
 end
+for i=1:size
+    for j=1:size
+        if abs(inputArr(i,j))<=0.001
+            inputArr(i,j) = 0;
+        end
+    end
+end
+
 disp(inputArr)
 outputArr = inputArr;
 end
