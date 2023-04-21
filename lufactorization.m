@@ -12,4 +12,6 @@ function x = lufactorization(A, b)
     [U, L, E] = elementary_calculate(A, b);
     y = L\b;
     x = U\y;
+    disp('x: ');
+    disp(x);
 end

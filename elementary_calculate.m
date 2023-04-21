@@ -7,6 +7,14 @@ function [upper, lower, emat] = elementary_calculate(A, b)
     [m, n] = size(A);
     if (m ~= n)
         disp('Matrix must be square for this program')
+        return 
+    end
+    if (m == 1) || (n == 1)
+        disp('Can not find 1x1 square')
+        return
+    end
+    if det_self2(A) == 0
+        disp('Matrix is singular, can not find inverse.')
         return
     end
     counter = 1;
@@ -29,9 +37,9 @@ function [upper, lower, emat] = elementary_calculate(A, b)
     for k=2:m
         elementary_matrix = e(:,:,k) * elementary_matrix;
     end
-    lower_temp = matrix_invert_self(e(:,:,end));
+    lower_temp = gauss_jordan_inverse(e(:,:,end));
     for l=m-1:-1:1
-        lower_temp = matrix_invert_self(e(:,:,l)) * lower_temp;
+        lower_temp = gauss_jordan_inverse(e(:,:,l)) * lower_temp;
     end
     lower = lower_temp;
     disp('Combined Elementary Matrix: ');
@@ -39,4 +47,12 @@ function [upper, lower, emat] = elementary_calculate(A, b)
     emat = elementary_matrix;
     disp('Lower Matrix: ');
     disp(lower);
+%     disp('TEST ELEMENT: ');
+%     disp(e(:,:,end))
+%     disp('TEST MATLAB: ');
+%     disp(inv(e(:,:,end)));
+%     disp('DET MATLAB: ');
+%     disp(det(e(:,:,end)));
+%     disp('TEST CHIC: ');
+%     disp(gauss_jordan_inverse(e(:,:,end)));
 end
