@@ -6,6 +6,8 @@ if size(inputArr,1) ~= size(inputArr,2)
 end
 
 det = det_self2(inputArr);
+disp('Determinant: ')
+disp(det);
 
 if det == 0
    error('Error: the determinant of input matrix = 0')
