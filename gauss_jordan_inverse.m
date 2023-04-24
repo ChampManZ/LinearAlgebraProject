@@ -1,4 +1,21 @@
 function A_inv = gauss_jordan_inverse(A)
+
+det = det_self2(A);
+disp('Determinant: ')
+disp(det);
+
+% if det == 0
+%    disp('Error: the determinant of input matrix = 0');
+%    disp('System is inconsistent.');
+%    return;
+% end
+% 
+% if isnan(det)
+%    disp('Error: the determinant of input matrix = NaN');
+%    disp('System is inconsistent.');
+%    return;
+% end
+
 % Check if the input is a square matrix
 if size(A,1) ~= size(A,2)
     A_inv = [];

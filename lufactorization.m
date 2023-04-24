@@ -8,10 +8,16 @@
 % Theory Note: Ux = y
 % Ly = b
 
+% Function Note: If 100x100 matrix, it takes around 1 minutes and 30 sec
+
 function x = lufactorization(A, b)
-    [U, L, E] = elementary_calculate(A, b);
+    [U, L, E, FV] = elementary_calculate(A, b);
     y = L\b;
     x = U\y;
-    disp('x: ');
-    disp(x);
+    if FV == "None"
+        disp('x: ');
+        disp(x);
+    end
+    disp('Free variable at x:');
+    disp(FV);
 end

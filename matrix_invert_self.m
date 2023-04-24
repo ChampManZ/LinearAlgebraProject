@@ -2,6 +2,8 @@ function [outputArr] = matrix_invert_self(inputArr)
 %METRIC_INVERT self made matrix invert function
 %   self made matrix invert function
 det = det_self2(inputArr);
+disp('Determinant: ')
+disp(det);
 
 if det == 0
    error('Error: the determinant of input matrix = 0')
