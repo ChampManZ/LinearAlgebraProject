@@ -1,6 +1,10 @@
 function [outputArr] = matrix_invert_self(inputArr)
-%METRIC_INVERT self made matrix invert function
+%METRIC_INVERT self X value made matrix invert function
 %   self made matrix invert function
+if size(inputArr,1) ~= size(inputArr,2)
+    error('Error: the matrix is not a square metrix')
+end
+
 det = det_self2(inputArr);
 
 if det == 0

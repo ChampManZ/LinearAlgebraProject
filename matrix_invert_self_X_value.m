@@ -1,4 +1,4 @@
-function [outputArr] = matrix_invert_self(inputArr,B)
+function [outputArr] = matrix_invert_self_X_value(inputArr,B)
 %METRIC_INVERT self made matrix invert function
 %   self made matrix invert function
 if size(inputArr,1) ~= size(inputArr,2)
@@ -12,6 +12,7 @@ if det == 0
 end
 
 coffector = cofactor_self(inputArr);
-outputArr = (1/det).*transpose(coffector);
+temp = (1/det).*transpose(coffector);
+outputArr = temp * B;
 end
 
