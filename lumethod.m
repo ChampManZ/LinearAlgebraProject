@@ -1,4 +1,4 @@
-function [L,U,P] = test_script2(A)
+function [L,U,P] = lumethod(A)
 % This function computes the LU factorization of a given matrix A using Gaussian elimination with partial pivoting
 
 % Get the size of the matrix A

@@ -11,13 +11,19 @@
 % Function Note: If 100x100 matrix, it takes around 1 minutes and 30 sec
 
 function x = lufactorization(A, b)
-    % [U, L, E, FV] = elementary_calculate(A, b);
-    [L, U, P] = test_script2(A);
+    [upperSecond, lowerSecond, E, FV] = elementary_calculate(A, b);
+    [L, U, P] = lumethod(A);
+    disp('Upper Matrix: ');
+    disp(U);
+    disp('Lower Matrix: ');
+    disp(L);
+    disp('Permutation Matrix: ');
+    disp(P)
     x = U \ (L \ (P * b));
-%     if FV == "None"
-%         disp('x: ');
-%         disp(x);
-%     end
-%     disp('Free variable at x:');
-%     disp(FV);
+    if FV == "None"
+        disp('x: ');
+        disp(x);
+    end
+    disp('Free variable at x:');
+    disp(FV);
 end

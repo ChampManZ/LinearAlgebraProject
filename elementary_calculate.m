@@ -49,8 +49,8 @@ function [upper, lower, emat, freevar] = elementary_calculate(main_mat, b)
             counter = counter + 1;
         end
     end
-    disp('Upper Matrix U: ');
-    disp(main_mat);
+    % disp('Upper Matrix U: ');
+    % disp(main_mat);
     disp('Column Matrix b: ');
     disp(b);
     upper = main_mat;
@@ -66,8 +66,8 @@ function [upper, lower, emat, freevar] = elementary_calculate(main_mat, b)
     disp('Combined Elementary Matrix: ');
     disp(elementary_matrix);
     emat = elementary_matrix;
-    disp('Lower Matrix: ');
-    disp(lower);
+    % disp('Lower Matrix: ');
+    % disp(lower);
     if freevar == zeros(1, n)
         freevar = "None";
     end
