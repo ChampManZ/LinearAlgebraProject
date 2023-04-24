@@ -5,6 +5,7 @@
 
 function [upper, lower, emat, freevar] = elementary_calculate(main_mat, b)
     checker = consistentcy(main_mat, b);
+    % main_mat = partial_pivoting(main_mat, b);
     if checker == true
         return
     end
